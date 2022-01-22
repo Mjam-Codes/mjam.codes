@@ -1,15 +1,21 @@
 <template>
   <div class="nav py-5">
-    <ul class="flex justify-end gap-10">
+    <ul class="flex justify-end gap-9 font-medium">
       <li class="">
-        <a href="#">Github</a>
+        <a href="#">github</a>
       </li>
       <li class="">
         <a href="#">Instagram</a>
       </li>
-      <li class="">
+      <li class="underline">
         <a href="#">mail@mjam.codes</a>
       </li>
     </ul>
   </div>
 </template>
+
+<script>
+export default {
+  name: 'TopNav'
+}
+</script>

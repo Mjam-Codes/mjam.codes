@@ -1,6 +1,7 @@
 <template>
   <div class="container mx-auto px-10">
-    <Navigation />
+    <TopNav />
     <Nuxt />
+    <MyFooter />
   </div>
 </template>
