@@ -1,19 +1,7 @@
 <template>
   <div class="pt-5">
-    <div class="flex px-36 pb-36 items-center">
-      <img
-        :src="selectedProjectImageUrl"
-        class="my-image w-72 h-96 object-cover"
-        alt=""
-      >
-      <div class="labels p-20 flex flex-col gap-5 font-semibold text-lg">
-        <div v-for="project in projects" :key="project.name">
-          <input :id="project.name" v-model="selectedProject" hidden type="radio" :value="project.name">
-          <label :for="project.name" class="cursor-pointer">
-            {{ project.label }}
-          </label>
-        </div>
-      </div>
+    <div class="">
+      <ImageSlider :slides="projects"/>
     </div>
 
   </div>
@@ -39,22 +27,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-.my-image {
-  filter: drop-shadow(-24px 24px 0 #000000) drop-shadow(-24px 24px 0 #333333);
-}
-label {
-  position: relative;
-}
-input:checked + label:before {
-  font-weight: 800;
-  content: '';
-  position: absolute;
-  height: 1px;
-  width: 160px;
-  top: 20px;
-  left: -170px;
-  background: black;
-}
-</style>

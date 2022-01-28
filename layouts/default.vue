@@ -1,5 +1,5 @@
 <template>
-  <div class="container mx-auto px-10">
+  <div class="overflow-hidden">
     <TopNav />
     <Nuxt />
     <MyFooter />

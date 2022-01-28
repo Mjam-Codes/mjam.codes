@@ -1,5 +1,5 @@
 <template>
-  <div class="nav py-5">
+  <div class="container nav py-5">
     <ul class="flex justify-end gap-9 font-medium">
       <li class="">
         <a href="#">github</a>
