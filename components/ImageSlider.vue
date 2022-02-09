@@ -11,7 +11,7 @@
           :key="slide.name"
           class="relative h-0 pb-3/2"
         >
-          <img class="absolute w-full h-full object-cover rounded-lg" :src="slide.imageUrl" :alt="slide.label">
+          <img class="absolute w-full h-full object-cover rounded-lg" :src="imageSource(slide.imageUrl)" :alt="slide.label">
           <span class="absolute bottom-10 left-10 text-white text-3xl">{{ slide.label }}</span>
         </swiper-slide>
         <div slot="pagination" class="swiper-pagination"></div>
@@ -72,6 +72,11 @@ export default {
   methods: {
     nextSlide () {
       this.$refs.swiper.$swiper.slideNext()
+    },
+    // Workaround to serve dynamic images from the assets folder
+    // https://blog.lichter.io/posts/dynamic-images-vue-nuxt/
+    imageSource (fileName) {
+      return require(`../assets/${fileName}`)
     }
   }
 }
