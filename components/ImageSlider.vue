@@ -39,7 +39,7 @@ export default {
         slidesOffsetBefore: 40,
         spaceBetween: 40,
         // slidesPerGroup: 1,
-        loop: true,
+        loop: false,
         // loopFillGroupWithBlank: true,
         pagination: {
           el: ".swiper-pagination",
