@@ -19,7 +19,7 @@
       </swiper>
     </ClientOnly>
     <div class="flex justify-end">
-      <button class="p-5" @click="nextSlide">
+      <button class="px-5 py-7" @click="nextSlide">
         <MyIcon icon="arrow-right" />
       </button>
     </div>
