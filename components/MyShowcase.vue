@@ -1,7 +1,7 @@
 <template>
   <div class="pt-5">
     <div class="">
-      <ImageSlider :slides="projects"/>
+      <ProjectSlider :slides="projects"/>
     </div>
 
   </div>
