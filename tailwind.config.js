@@ -6,7 +6,7 @@ module.exports = {
         'custom-secondary': '#ae8883'
       },
       padding: {
-        '3/2': '133.33333%',
+        '2/3': '146.5%',
       }
     },
     fontFamily: {

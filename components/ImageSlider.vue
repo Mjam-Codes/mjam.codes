@@ -9,7 +9,7 @@
         <swiper-slide
           v-for="slide in slides"
           :key="slide.name"
-          class="relative h-0 pb-3/2"
+          class="relative h-0 pb-2/3"
         >
           <div class="image-overlay absolute w-full h-full bg-black opacity-20 rounded-lg z-10"></div>
           <img class="absolute w-full h-full object-cover rounded-lg" :src="imageSource(slide.imageUrl)" :alt="slide.label">
