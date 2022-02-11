@@ -9,7 +9,10 @@
 export default {
   name: 'MyIcon',
   props: {
-    icon: String
+    icon: {
+      type: String,
+      default: ''
+    }
   }
 }
 </script>
