@@ -30,7 +30,12 @@
 export default {
   name: 'ImageSlider',
   props: {
-    slides: Array
+    slides: {
+      type: Array,
+      default() {
+        return []
+      }
+    }
   },
   data () {
     return {
