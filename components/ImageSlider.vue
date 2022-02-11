@@ -11,8 +11,9 @@
           :key="slide.name"
           class="relative h-0 pb-3/2"
         >
+          <div class="image-overlay absolute w-full h-full bg-black opacity-20 rounded-lg z-10"></div>
           <img class="absolute w-full h-full object-cover rounded-lg" :src="imageSource(slide.imageUrl)" :alt="slide.label">
-          <span class="absolute bottom-10 left-10 text-white text-3xl">{{ slide.label }}</span>
+          <span class="absolute bottom-10 left-10 right-10 text-white text-2xl z-20">{{ slide.label }} – </br>{{slide.description}}</span>
         </swiper-slide>
         <div slot="pagination" class="swiper-pagination"></div>
       </swiper>
@@ -83,18 +84,12 @@ export default {
 </script>
 
 <style scoped>
-
-.swiper-slide:after {
-  content: '';
-  @apply absolute rounded-xl w-full h-full bg-black opacity-60
-}
-
-.swiper-slide-active:after {
-  display: none;
-}
-
 .swiper-button-next {
   bottom: 0 !important;
+}
+
+.swiper-slide-active .image-overlay {
+  @apply opacity-20;
 }
 
 .swiper-pagination-bullet.swiper-pagination-bullet-active::after {
