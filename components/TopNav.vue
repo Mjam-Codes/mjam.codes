@@ -1,6 +1,6 @@
 <template>
-  <div class="container nav py-5">
-    <ul class="flex justify-end gap-9 font-medium">
+  <div class="container nav mx-auto py-5 px-7">
+    <ul class="flex justify-end gap-4 md:gap-8 font-medium">
       <li class="">
         <a href="https://github.com/Mjam-Codes" target="_blank">github</a>
       </li>

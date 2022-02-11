@@ -1,5 +1,5 @@
 <template>
-  <div class="container p-20 text-center font-medium text-4xl md:text-3xl">
+  <div class="container mx-auto p-20 text-center font-medium text-4xl md:text-3xl">
     <span class="text-custom-primary">
       Mjam</span> builds lightweight web <br>
       infrastructures for your designs. Our code is <br>
