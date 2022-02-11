@@ -1,13 +1,17 @@
 <template>
   <div class="imprint container mx-auto pt-10 pb-24 text-center font-semibold">
     <p class="p-5">
-      Mjam Codes UG<br>
-      Keupstraße 46<br>
-      51063 Köln
+      Lightweight web infrastructures | Mjam 
+    </p>
+     <p class="p-5">
+      Moritz Pflüger<br>
+      Wichheimerstraße 36<br>
+      50678 Köln
     </p>
     <p class="p-5">
-      Moritz Pflüger & Milan Bargiel<br>
-      <span class="underline">mail@mjam.codes</span>
+      Milan Bargiel<br>
+      Hauptstraße 36<br>
+      10827 Berlin
     </p>
     <p class="p-5">
       Data Protection Policy (GDPR)<br>
