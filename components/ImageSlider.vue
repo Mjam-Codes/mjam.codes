@@ -36,7 +36,6 @@ export default {
     return {
       swiperOption: {
         // slidesPerView: 1,
-        slidesOffsetBefore: 40,
         spaceBetween: 40,
         // slidesPerGroup: 1,
         loop: false,
@@ -49,24 +48,6 @@ export default {
           nextEl: ".swiper-button-next",
           // prevEl: ".swiper-button-prev",
         },
-        breakpoints: {
-          // 1024: {
-          //   slidesPerView: 4,
-          //   spaceBetween: 10
-          // },
-          // 768: {
-          //   slidesPerView: 3,
-          //   spaceBetween: 10
-          // },
-          // 640: {
-          //   slidesPerView: 2,
-          //   spaceBetween: 10
-          // },
-          // 320: {
-          //   slidesPerView: 1,
-          //   spaceBetween: 10
-          // }
-        }
       }
     }
   },
@@ -90,14 +71,6 @@ export default {
 
 .swiper-slide-active .image-overlay {
   @apply opacity-20;
-}
-
-.swiper-pagination-bullet.swiper-pagination-bullet-active::after {
-  @apply w-48 h-48 ;
-}
-
-.slick-current .my-image {
-  filter: drop-shadow(-24px 24px 0 #000000) drop-shadow(-24px 24px 0 #333333);
 }
 
 </style>
