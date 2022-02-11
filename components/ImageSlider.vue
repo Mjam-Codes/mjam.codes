@@ -1,5 +1,5 @@
 <template>
-  <div class="">
+  <div class="md:hidden">
     <ClientOnly>
       <swiper
         ref="swiper"
