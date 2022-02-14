@@ -1,5 +1,5 @@
 <template>
-  <div class="text-center font-medium text-custom-secondary text-sm pb-5">
+  <div class="text-center font-medium text-custom-secondary pb-5">
     <NuxtLink v-if="$route.name === 'imprint'" to="/">
       Return to homepage
     </NuxtLink>
