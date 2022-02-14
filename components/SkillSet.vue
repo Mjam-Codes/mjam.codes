@@ -1,5 +1,5 @@
 <template>
-  <div class="container p-20">
+  <div class="container px-6 py-10 md:p-20">
   <ul class="list-disc font-semibold">
     <li class="pb-5">🌴 Accessibility and performance are essential to us.</li>
     <li class="pb-5">🤓 We write semantic code and apply web standards with HTML, CSS, and JavaScript.  We are savvy with frontend frameworks like React, Vue, and Next.js/Nuxt and know their pros and cons.</li>
