@@ -15,7 +15,6 @@
           <img class="absolute w-full h-full object-cover rounded-lg" :src="imageSource(slide.imageUrl)" :alt="slide.label">
           <span class="absolute bottom-10 left-10 right-10 text-white text-2xl z-20">{{ slide.label }} – </br>{{slide.description}}</span>
         </swiper-slide>
-        <div slot="pagination" class="swiper-pagination"></div>
       </swiper>
     </ClientOnly>
     <div class="flex justify-end">
@@ -45,10 +44,6 @@ export default {
         // slidesPerGroup: 1,
         loop: false,
         // loopFillGroupWithBlank: true,
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
         navigation: {
           nextEl: ".swiper-button-next",
           // prevEl: ".swiper-button-prev",
