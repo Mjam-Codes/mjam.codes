@@ -4,7 +4,7 @@
       Return to homepage
     </NuxtLink>
     <NuxtLink v-else to="/imprint">
-      Legal notice & data privacy
+      Legal notice & <br class="mobile-break">data privacy
     </NuxtLink>
   </div>
 </template>
@@ -14,3 +14,11 @@ export default {
   name: 'MyFooter'
 }
 </script>
+
+<style scoped>
+@media screen(md) {
+  .mobile-break {
+    display: none
+  }
+}
+</style>
