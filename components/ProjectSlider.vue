@@ -56,9 +56,10 @@ export default {
         spaceBetween: 40,
         loop: false,
         breakpoints: {
-          768: { // when window width is >= 768px show no transitions
+          768: { // when window width is >= 768px handle translations with css
             speed: 0,
             spaceBetween: 0,
+            virtualTranslate: true
           }
         }
       }
