@@ -5,7 +5,7 @@ export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   // Favicons created with https://favicon.io/
   head: {
-    title: 'Lightweight web infrastructures | Mjam',
+    title: 'Mjam | Lightweight web infrastructures',
     htmlAttrs: {
       lang: 'en',
     },
