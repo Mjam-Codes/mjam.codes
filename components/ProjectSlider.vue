@@ -1,9 +1,9 @@
 <template>
-  <div class="custom-box-shadow md:flex md:items-center">
+  <div class="md:w-full md:flex">
     <ClientOnly class="custom-box-shadow md:flex md:items-center">
       <swiper
         ref="swiper"
-        class="w-3/4 md:w-1/3 md:overflow-hidden"
+        class="w-3/4"
         :options="swiperOption"
       >
         <swiper-slide
@@ -16,22 +16,23 @@
           <span class="absolute bottom-10 left-10 right-10 text-white text-2xl z-20">{{ slide.label }} – </br>{{slide.description}}</span>
         </swiper-slide>
       </swiper>
-      <div class="hidden flex-col gap-10 pagination mt-16 ml-32 md:flex">
-        <button
-          v-for="slide in slides"
-          :key="'pagination_' + slide.name"
-          class="text-left"
-          @click="goToSlide(slide)"
-        >
-          <div class="font-semibold text-2xl">
-            {{ slide.label }}
-          </div>
-        </button>
-      </div>
+      <!-- Mobile navigation is a simple arrow -->
       <div class="flex justify-end md:hidden">
         <button class="px-5 py-7" @click="nextSlide">
           <MyIcon icon="arrow-right" />
         </button>
+      </div>
+      <!-- Desktop navigation -->
+      <div class="hidden md:flex ml-20 w-1/2">
+        <ul class="self-center">
+          <li
+            v-for="slide in slides"
+            :key="'pagination_' + slide.name"
+            class="mb-7"
+          >
+            <button class="font-semibold text-2xl" @click="goToSlide(slide)">{{ slide.label }}</button>
+          </li>
+        </ul>
       </div>
     </ClientOnly>
   </div>
@@ -51,16 +52,9 @@ export default {
   data () {
     return {
       swiperOption: {
+        slidesPerView: 'auto',
         spaceBetween: 40,
         loop: false,
-        navigation: {
-          nextEl: ".swiper-button-next",
-          clickable: true,
-        },
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
         breakpoints: {
           768: { // when window width is >= 768px show no transitions
             speed: 0,
@@ -94,29 +88,10 @@ export default {
   @apply opacity-20;
 }
 
-/* Styles for the desktop version of the slider */
-@media screen and (min-width: 768px) {
-  .custom-box-shadow {
-    position: relative;
-    margin-left: 20vw;
-  }
-  .custom-box-shadow:before {
-    position:absolute;
-    content: '';
-    width: 2vw;
-    height: 90%;
-    background: black;
-    left: -2vw;
-    border-radius: 10px 0 0 10px;
-  }
-  .custom-box-shadow:after {
-    position:absolute;
-    content: '';
-    width: 2vw;
-    height: 80%;
-    background: rgba(0,0,0, .7);
-    left: -4vw;
-    border-radius: 10px 0 0 10px;
+@media screen(md) {
+  .swiper-container {
+    overflow: hidden;
+    @apply flex w-1/2 mr-20;
   }
 }
 </style>
