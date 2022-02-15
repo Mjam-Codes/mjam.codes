@@ -3,7 +3,10 @@ module.exports = {
     extend: {
       colors: {
         'custom-primary': '#BF5AD9',
-        'custom-secondary': '#ae8883'
+        'custom-secondary': {
+          500: '#ae8883',
+          700: '#5c1006B3',
+        },
       },
       padding: {
         '2/3': '146.5%',

@@ -1,5 +1,5 @@
 <template>
-  <div class="text-center font-medium text-custom-secondary pb-5 leading-tight">
+  <div class="text-center font-medium pb-5 leading-tight text-custom-secondary-500 hover:text-custom-secondary-700">
     <NuxtLink v-if="$route.name === 'imprint'" to="/">
       Return to <br class="mobile-break" />homepage
     </NuxtLink>
