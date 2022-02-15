@@ -1,9 +1,6 @@
 <template>
   <div class="pt-5">
-    <div class="">
-      <ProjectSlider :slides="projects"/>
-    </div>
-
+    <ProjectSlider :slides="projects"/>
   </div>
 </template>
 
