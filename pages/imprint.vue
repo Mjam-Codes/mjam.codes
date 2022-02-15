@@ -1,8 +1,7 @@
 <template>
   <div class="imprint container mx-auto px-6 py-10 text-center font-bold text-lg leading-tight">
     <p class="mb-5">
-      Mjam<br>
-      <a href="mailto:mail@mjam.codes">mail@mjam.codes</a>
+      Contact
     </p>
      <p class="mb-5">
       Moritz Pflüger<br>
@@ -15,6 +14,9 @@
       10827 Berlin
     </p>
     <p class="mb-5">
+      <a class="underline hover:text-custom-secondary-500" href="mailto:mail@mjam.codes">mail@mjam.codes</a>
+    </p>
+    <p class="mb-5">
       Data Protection Policy (GDPR)<br>
       This website does not collect, store or process Personally Identifiable Information (PII).<br>
       This website does not require the use of cookies.
@@ -22,7 +24,7 @@
     <p>
       Third Party Inclusion<br>
       This website is hosted by Github using Github Pages.<br>
-      The Github Global Privacy Practices are available here.
+      The Github Global Privacy Practices are available <a class="underline hover:text-custom-secondary-500" href="https://docs.github.com/en/github/site-policy/global-privacy-practices" target="_blank">here</a>.
     </p>
   </div>
 </template>
