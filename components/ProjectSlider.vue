@@ -1,5 +1,5 @@
 <template>
-  <div class="md:w-full md:flex">
+  <div class="md:flex md:mx-auto md:max-w-5xl">
     <ClientOnly class="custom-box-shadow md:flex md:items-center">
       <swiper
         ref="swiper"
@@ -23,7 +23,7 @@
         </button>
       </div>
       <!-- Desktop navigation -->
-      <div class="hidden md:flex ml-20 w-1/2">
+      <div class="hidden md:flex ml-16 w-1/2">
         <ul class="self-center">
           <li
             v-for="slide in slides"
@@ -58,6 +58,7 @@ export default {
         breakpoints: {
           768: { // when window width is >= 768px show no transitions
             speed: 0,
+            spaceBetween: 0,
           }
         }
       }
@@ -90,8 +91,33 @@ export default {
 
 @media screen(md) {
   .swiper-container {
-    overflow: hidden;
-    @apply flex w-1/2 mr-20;
+    width: 50%;
+    height: 481px;
+    @apply flex mr-16;
+  }
+
+  .swiper-slide {
+    width: 75%;
+    padding-bottom: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  .swiper-slide:nth-child(1) {
+    z-index: 90;
+  }
+
+  .swiper-slide:nth-child(2) {
+    z-index: 60;
+    right: 10%;
+    transform: scale3d(0.9, 0.9, 1);
+  }
+
+  .swiper-slide:nth-child(3) {
+    z-index: 30;
+    right: 20%;
+    transform: scale3d(0.8, 0.8, 1);
   }
 }
 </style>
