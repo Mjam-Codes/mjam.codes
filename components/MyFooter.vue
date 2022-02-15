@@ -1,9 +1,9 @@
 <template>
-  <div class="text-center font-medium pb-5 leading-tight text-custom-secondary-500 hover:text-custom-secondary-700">
-    <NuxtLink v-if="$route.name === 'imprint'" to="/">
+  <div class="text-center font-medium pb-5 leading-tight text-custom-secondary-500">
+    <NuxtLink v-if="$route.name === 'imprint'" class="hover:text-custom-secondary-700" to="/">
       Return to <br class="mobile-break" />homepage
     </NuxtLink>
-    <NuxtLink v-else to="/imprint">
+    <NuxtLink v-else class="hover:text-custom-secondary-700" to="/imprint">
       Legal notice & <br class="mobile-break" />data privacy
     </NuxtLink>
   </div>
