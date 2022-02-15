@@ -104,17 +104,17 @@ export default {
     right: 0;
   }
 
-  .swiper-slide:nth-child(1) {
+  .swiper-slide-active {
     z-index: 90;
   }
 
-  .swiper-slide:nth-child(2) {
+  .swiper-slide-next {
     z-index: 60;
     right: 10%;
     transform: scale3d(0.9, 0.9, 1);
   }
 
-  .swiper-slide:nth-child(3) {
+  .swiper-slide:not(.swiper-slide-active):not(.swiper-slide-next) {
     z-index: 30;
     right: 20%;
     transform: scale3d(0.8, 0.8, 1);

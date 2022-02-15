@@ -1,5 +1,5 @@
 <template>
-  <div class="pt-5 md:flex md:mx-auto md:max-w-4xl">
+  <div class="pt-5">
     <ProjectSlider :slides="projects"/>
   </div>
 </template>
