@@ -27,7 +27,7 @@
 
 <script>
 export default {
-  name: 'ImageSlider',
+  name: 'ProjectSlider',
   props: {
     slides: {
       type: Array,
