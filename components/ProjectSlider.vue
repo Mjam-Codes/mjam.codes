@@ -97,17 +97,23 @@ export default {
     @apply flex mr-16;
   }
 
+   /* Swiper slide has four potential states: active, next, prev or none of those*/
   .swiper-slide {
     width: 75%;
     padding-bottom: 100%;
     position: absolute;
     top: 0;
-    right: 0;
+    /* Set the small card size as a default*/
+    z-index: 30;
+    right: 20%;
+    transform: scale3d(0.8, 0.8, 1);
   }
 
   /* The active card is always at front */
   .swiper-slide-active {
     z-index: 90;
+    right: 0;
+    transform: scale3d(1, 1, 1);
   }
 
   /* The next card has the middle size */
@@ -117,19 +123,8 @@ export default {
     transform: scale3d(0.9, 0.9, 1);
   }
 
-  /* The previous card is the smallest in size */
-  .swiper-slide-prev {
-    z-index: 30;
-    right: 20%;
-    transform: scale3d(0.8, 0.8, 1);
-  }
-
-  .swiper-slide:not(.swiper-slide-active):not(.swiper-slide-next):not(.swiper-slide-prev) {
-    z-index: 30;
-    right: 20%;
-    transform: scale3d(0.8, 0.8, 1);
-  }
-
+  /* If the first swiper-slide child has neither the active, next or prev class */
+  /* The animation is at its end and therefore the next and medium sized card is the first one */
   .swiper-slide:not(.swiper-slide-active):not(.swiper-slide-next):not(.swiper-slide-prev):first-child {
     z-index: 60;
     right: 10%;
