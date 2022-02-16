@@ -13,7 +13,9 @@
         >
           <div class="image-overlay absolute w-full h-full bg-black opacity-20 rounded-lg z-10 md:border md:border-black"></div>
           <img class="absolute w-full h-full object-cover rounded-lg" :src="imageSource(slide.imageUrl)" :alt="slide.label">
-          <span class="absolute bottom-10 left-10 right-10 text-white text-2xl z-20">{{ slide.label }} – </br>{{slide.description}}</span>
+          <div class="absolute bottom-10 left-10 right-10 text-white text-2xl z-20">
+            <div class="md:hidden">{{ slide.label }} – </div>{{slide.description}}
+          </div>
         </swiper-slide>
       </swiper>
       <!-- Mobile navigation is a simple arrow -->
