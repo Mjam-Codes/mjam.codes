@@ -30,7 +30,7 @@
           <li
             v-for="(slide, index) in slides"
             :key="'pagination_' + slide.key"
-            :class="{ 'mb-7': true, 'text-red-800': index ===  activeSlideIndex }"
+            :class="{ 'mb-7': true, 'project': true, 'project-active': index ===  activeSlideIndex }"
           >
             <button class="font-semibold text-2xl" @click="goToSlide(slide)">{{ slide.name }}</button>
           </li>
@@ -95,6 +95,22 @@ export default {
 }
 
 @media screen(md) {
+
+  .project::after {
+    content: '';
+    transition: left 0.2s cubic-bezier(0.215, 0.61, 0.355, 1),width 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+    @apply absolute bg-black left-0 w-0 bottom-2 z-50 h-px;
+  }
+
+  .project-active {
+    @apply relative;
+  }
+
+  .project-active::after {
+    width: 13.5rem;
+    @apply -left-56;
+  }
+
   .swiper-container {
     width: 50%;
     height: 481px;
@@ -108,21 +124,21 @@ export default {
     position: absolute;
     top: 0;
     /* Set the small card size as a default*/
-    z-index: 30;
+    z-index: 20;
     right: 20%;
     transform: scale3d(0.8, 0.8, 1);
   }
 
   /* The active card is always at front */
   .swiper-slide-active {
-    z-index: 90;
+    z-index: 40;
     right: 0;
     transform: scale3d(1, 1, 1);
   }
 
   /* The next card has the middle size */
   .swiper-slide-next {
-    z-index: 60;
+    z-index: 30;
     right: 10%;
     transform: scale3d(0.9, 0.9, 1);
   }
@@ -130,7 +146,7 @@ export default {
   /* If the first swiper-slide child has neither the active, next or prev class */
   /* The animation is at its end and therefore the next and medium sized card is the first one */
   .swiper-slide:not(.swiper-slide-active):not(.swiper-slide-next):not(.swiper-slide-prev):first-child {
-    z-index: 60;
+    z-index: 30;
     right: 10%;
     transform: scale3d(0.9, 0.9, 1);
   }
