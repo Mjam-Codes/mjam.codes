@@ -105,20 +105,35 @@ export default {
     right: 0;
   }
 
+  /* The active card is always at front */
   .swiper-slide-active {
     z-index: 90;
   }
 
+  /* The next card has the middle size */
   .swiper-slide-next {
     z-index: 60;
     right: 10%;
     transform: scale3d(0.9, 0.9, 1);
   }
 
-  .swiper-slide:not(.swiper-slide-active):not(.swiper-slide-next) {
+  /* The previous card is the smallest in size */
+  .swiper-slide-prev {
     z-index: 30;
     right: 20%;
     transform: scale3d(0.8, 0.8, 1);
+  }
+
+  .swiper-slide:not(.swiper-slide-active):not(.swiper-slide-next):not(.swiper-slide-prev) {
+    z-index: 30;
+    right: 20%;
+    transform: scale3d(0.8, 0.8, 1);
+  }
+
+  .swiper-slide:not(.swiper-slide-active):not(.swiper-slide-next):not(.swiper-slide-prev):first-child {
+    z-index: 60;
+    right: 10%;
+    transform: scale3d(0.9, 0.9, 1);
   }
 }
 </style>
