@@ -9,11 +9,10 @@ export default {
   name: 'MyShowcase',
   data () {
     return {
-      selectedProject: 'kulturgenerator',
       projects: [
-        { name: 'kulturgenerator', label: 'Kulturgenerator', description: 'An online art gallery based on Nuxtjs and the Strapi CMS.', imageUrl: 'kulturgenerator.png' },
-        { name: 'timesales', label: 'Timesales', description: 'A chatbot shop system build with Nuxtjs, Stripe and the Strapi CMS.', imageUrl: 'timesales.png' },
-        { name: 'buildingsocialecology', label: 'Building Social Ecology', description: 'An archive of socio-ecologic housing projects build with Wordpress.', imageUrl: 'building-social-ecology.png' }
+        { key: 'kulturgenerator', name: 'Kulturgenerator', description: 'An online art gallery based on Nuxtjs and the Strapi CMS.', imageUrl: 'kulturgenerator.png' },
+        { key: 'timesales', name: 'Timesales', description: 'A chatbot shop system build with Nuxtjs, Stripe and the Strapi CMS.', imageUrl: 'timesales.png' },
+        { key: 'buildingsocialecology', name: 'Building Social Ecology', description: 'An archive of socio-ecologic housing projects build with Wordpress.', imageUrl: 'building-social-ecology.png' }
       ]
     }
   },

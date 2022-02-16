@@ -8,13 +8,13 @@
       >
         <swiper-slide
           v-for="slide in slides"
-          :key="slide.name"
+          :key="slide.key"
           class="relative h-0 pb-2/3"
         >
           <div class="image-overlay absolute w-full h-full bg-black opacity-20 rounded-lg z-10 md:border md:border-black"></div>
-          <img class="absolute w-full h-full object-cover rounded-lg" :src="imageSource(slide.imageUrl)" :alt="slide.label">
+          <img class="absolute w-full h-full object-cover rounded-lg" :src="imageSource(slide.imageUrl)" :alt="slide.name">
           <div class="absolute bottom-10 left-10 right-10 text-white text-2xl z-20">
-            <div class="md:hidden">{{ slide.label }} – </div>{{slide.description}}
+            <div class="md:hidden">{{ slide.name }} – </div>{{slide.description}}
           </div>
         </swiper-slide>
       </swiper>
@@ -28,11 +28,11 @@
       <div class="hidden md:flex ml-16 w-1/2">
         <ul class="self-center">
           <li
-            v-for="slide in slides"
-            :key="'pagination_' + slide.name"
-            class="mb-7"
+            v-for="(slide, index) in slides"
+            :key="'pagination_' + slide.key"
+            :class="{ 'mb-7': true, 'text-red-800': index ===  activeSlideIndex }"
           >
-            <button class="font-semibold text-2xl" @click="goToSlide(slide)">{{ slide.label }}</button>
+            <button class="font-semibold text-2xl" @click="goToSlide(slide)">{{ slide.name }}</button>
           </li>
         </ul>
       </div>
@@ -64,7 +64,8 @@ export default {
             virtualTranslate: true
           }
         }
-      }
+      },
+      activeSlideIndex: 0,
     }
   },
   methods: {
@@ -72,7 +73,8 @@ export default {
       this.$refs.swiper.$swiper.slideNext()
     },
     goToSlide(slide) {
-      this.$refs.swiper.$swiper.slideTo(this.slides.indexOf(slide))
+      this.activeSlideIndex = this.slides.indexOf(slide)
+      this.$refs.swiper.$swiper.slideTo(this.activeSlideIndex)
     },
     // Workaround to serve dynamic images from the assets folder
     // https://blog.lichter.io/posts/dynamic-images-vue-nuxt/
