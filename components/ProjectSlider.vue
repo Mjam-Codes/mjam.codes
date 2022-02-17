@@ -133,6 +133,8 @@ export default {
     z-index: 20;
     right: 20%;
     transform: scale3d(0.8, 0.8, 1);
+    /* Set transition styles */
+    transition: transform 0.2s cubic-bezier(0.215, 0.61, 0.355, 1), right 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
   }
 
   /* The active card is always at front */
