@@ -8,9 +8,6 @@ module.exports = {
           700: '#5c1006B3',
         },
       },
-      padding: {
-        '2/3': '146.5%',
-      },
     },
     fontFamily: {
       'sans': ['Roboto', 'ui-sans-serif', 'system-ui']
