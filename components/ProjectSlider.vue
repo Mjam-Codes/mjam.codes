@@ -94,31 +94,13 @@ export default {
   @apply relative h-0;
 }
 
-@media screen(md) {
-  .swiper-slide {
-    @apply h-full;
-  }
-}
-
 /* A transparent overlay to darken the swiper image */
 .swiper-overlay {
   @apply absolute w-full h-full bg-black opacity-20 rounded-lg z-10;
 }
 
-@media screen(md) {
-  .swiper-overlay {
-      @apply bg-gray-700 opacity-100;
-  }
-}
-
 .swiper-image {
   @apply absolute w-full h-full object-cover rounded-lg;
-}
-
-@media screen(md) {
-  .swiper-image {
-      @apply border border-black;
-  }
 }
 
 .slider-label {
@@ -126,35 +108,29 @@ export default {
 }
 
 @media screen(md) {
+  /* Swiper slide has four potential states: active, next, prev or none of those*/
+  .swiper-slide {
+    /* Important: Use translate3d to increase animation speed by calculating the animation on the GPU */
+    transform: translate3d(-30%, 0, 0) scale3d(0.8, 0.8, 1);
+    transition: transform 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+    @apply h-full absolute top-0 right-0 w-9/12 pb-0 z-20;
+  }
+
+  .swiper-overlay {
+    @apply bg-gray-700 opacity-100;
+  }
+
+  .swiper-image {
+      @apply border border-black;
+  }
+
   .slider-label {
     @apply hidden;
-  }
-
-  /* Line that points to card when project is selected */
-  .project::after {
-    content: '';
-    @apply absolute bg-gray-600 -left-48 bottom-2 z-50 h-px scale-0 w-3/4 transition transform-gpu origin-right ease-out duration-200;
-  }
-
-  .project-active {
-    @apply relative;
-  }
-
-  .project-active::after {
-    @apply scale-100 transform-gpu;
   }
 
   .swiper-container {
     height: 481px;
     @apply flex w-1/2 mr-16;
-  }
-
-   /* Swiper slide has four potential states: active, next, prev or none of those*/
-  .swiper-slide {
-    /* Important: Use translate3d to increase animation speed by calculating the animation on the GPU */
-    transform: translate3d(-30%, 0, 0) scale3d(0.8, 0.8, 1);
-    transition: transform 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
-    @apply absolute top-0 right-0 w-9/12 pb-0 z-20;
   }
 
   /* The active card is always at front */
@@ -183,6 +159,20 @@ export default {
   .swiper-slide-next .swiper-overlay,
   .swiper-slide:not(.swiper-slide-active):not(.swiper-slide-next):not(.swiper-slide-prev):first-child .swiper-overlay {
     @apply bg-black opacity-100;
+  }
+
+  /* Line that points to card when project is selected */
+  .project::after {
+    content: '';
+    @apply absolute bg-gray-600 -left-48 bottom-2 z-50 h-px scale-0 w-3/4 transition transform-gpu origin-right ease-out duration-200;
+  }
+
+  .project-active {
+    @apply relative;
+  }
+
+  .project-active::after {
+    @apply scale-100 transform-gpu;
   }
 }
 </style>
