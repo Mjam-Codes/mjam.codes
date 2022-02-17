@@ -152,7 +152,8 @@ export default {
   /* Line that points to card when project is selected */
   .project::after {
     content: '';
-    @apply absolute bg-gray-500 -left-48 bottom-2 z-50 h-px scale-0 w-3/4 transition transform-gpu origin-right ease-out duration-200;
+    width: 11.5rem;
+    @apply absolute bg-gray-500 -left-48 bottom-2 z-50 h-px scale-0 transition transform-gpu origin-right ease-out duration-200;
   }
 
   .project-active {
