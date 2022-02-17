@@ -104,8 +104,7 @@ export default {
     width: 13.5rem;
     transition: transform 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
     transform-origin: right;
-    transform-style: preserve-3D;
-    transform: scale(0);
+    transform: scale3d(0, 0, 1);
     @apply absolute bg-black -left-56 bottom-2 z-50 h-px;
   }
 
@@ -114,7 +113,7 @@ export default {
   }
 
   .project-active::after {
-    transform: scale(1);
+    transform: scale3d(1, 1, 1);
   }
 
   .swiper-container {
