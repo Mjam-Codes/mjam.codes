@@ -113,66 +113,48 @@ export default {
   }
 
   .swiper-container {
-    width: 50%;
     height: 481px;
-    @apply flex mr-16;
+    @apply flex w-1/2 mr-16;
   }
 
    /* Swiper slide has four potential states: active, next, prev or none of those*/
   .swiper-slide {
-    width: 75%;
-    padding-bottom: 100%;
-    position: absolute;
-    top: 0;
-    right: 0;
-    /* Set the small card size as a default*/
-    z-index: 20;
     /* Important: Use translate3d to increase animation speed by calculating the animation on the GPU */
     transform: translate3d(-30%, 0, 0) scale3d(0.8, 0.8, 1);
     transition: transform 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+    @apply absolute top-0 right-0 w-9/12 pb-0 z-20;
   }
 
   .swiper-slide .image-overlay {
-    background-color: #333;
-    @apply opacity-100;
+    @apply bg-gray-700 opacity-100;
   }
 
   /* The active card is always at front */
   .swiper-slide-active {
-    z-index: 40;
     transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+    @apply z-40;
   }
 
   .swiper-slide-active .image-overlay {
-    background-color: #000;
-    @apply opacity-20;
+    @apply bg-black opacity-20;
   }
 
   .swiper-slide-active .slider-label {
-    display: block;
+    @apply block;
   }
 
   /* The next card has the middle size */
-  .swiper-slide-next {
-    z-index: 30;
-    transform: translate3d(-15%, 0, 0) scale3d(0.9, 0.9, 1);
-  }
-
-  .swiper-slide-next .image-overlay {
-    background-color: #000;
-    @apply opacity-100;
-  }
-
   /* If the first swiper-slide child has neither the active, next or prev class */
   /* The animation is at its end and therefore the next and medium sized card is the first one */
+  .swiper-slide-next,
   .swiper-slide:not(.swiper-slide-active):not(.swiper-slide-next):not(.swiper-slide-prev):first-child {
-    z-index: 30;
     transform: translate3d(-15%, 0, 0) scale3d(0.9, 0.9, 1);
+    @apply z-30;
   }
 
+  .swiper-slide-next .image-overlay,
   .swiper-slide:not(.swiper-slide-active):not(.swiper-slide-next):not(.swiper-slide-prev):first-child .image-overlay {
-     background-color: #000;
-     @apply opacity-100;
+    @apply bg-black opacity-100;
   }
 }
 </style>
