@@ -11,9 +11,6 @@ module.exports = {
       padding: {
         '2/3': '146.5%',
       },
-      width: {
-        '58': '14.5rem',
-      },
     },
     fontFamily: {
       'sans': ['Roboto', 'ui-sans-serif', 'system-ui']

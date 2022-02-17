@@ -26,7 +26,7 @@
       </div>
       <!-- Desktop navigation -->
       <div class="hidden md:flex ml-16 w-1/2">
-        <ul class="self-center">
+        <ul class="self-end mb-24">
           <li
             v-for="(slide, index) in slides"
             :key="'pagination_' + slide.key"
@@ -95,16 +95,13 @@ export default {
 
 @media screen(md) {
   .slider-label {
-    display: none;
+    @apply hidden;
   }
 
+  /* Line that points to card when project is selected */
   .project::after {
     content: '';
-    width: 13.5rem;
-    transition: transform 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
-    transform-origin: right;
-    transform: scale3d(0, 0, 1);
-    @apply absolute bg-black -left-56 bottom-2 z-50 h-px;
+    @apply absolute bg-gray-600 -left-48 bottom-2 z-50 h-px scale-0 w-3/4 transition transform-gpu origin-right ease-out duration-200;
   }
 
   .project-active {
@@ -112,7 +109,7 @@ export default {
   }
 
   .project-active::after {
-    transform: scale3d(1, 1, 1);
+    @apply scale-100 transform-gpu;
   }
 
   .swiper-container {
