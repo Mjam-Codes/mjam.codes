@@ -32,7 +32,7 @@
             :key="'pagination_' + slide.key"
             :class="{ 'mb-7': true, 'project': true, 'project-active': index ===  activeSlideIndex }"
           >
-            <button class="font-semibold text-2xl" @click="goToSlide(slide)">{{ slide.name }}</button>
+            <button class="font-semibold text-2xl" @mouseover="goToSlide(slide)">{{ slide.name }}</button>
           </li>
         </ul>
       </div>
@@ -73,8 +73,11 @@ export default {
       this.$refs.swiper.$swiper.slideNext()
     },
     goToSlide(slide) {
-      this.activeSlideIndex = this.slides.indexOf(slide)
-      this.$refs.swiper.$swiper.slideTo(this.activeSlideIndex)
+      // Only change slide when the slide differs from the one that is active
+      if (this.activeSlideIndex !== this.slides.indexOf(slide)) {
+        this.activeSlideIndex = this.slides.indexOf(slide)
+        this.$refs.swiper.$swiper.slideTo(this.activeSlideIndex)
+      }
     },
     // Workaround to serve dynamic images from the assets folder
     // https://blog.lichter.io/posts/dynamic-images-vue-nuxt/
