@@ -1,5 +1,5 @@
 <template>
-  <div class="imprint container mx-auto px-6 py-10 text-center font-bold text-lg leading-tight">
+  <div class="imprint container mx-auto px-6 py-10 text-center font-bold text-lg leading-tight md:mb-32">
     <p class="mb-5">
       Contact
     </p>
