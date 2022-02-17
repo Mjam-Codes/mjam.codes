@@ -1,5 +1,5 @@
 <template>
-  <div class="pt-5">
+  <div class="pt-5 md:pb-10 md:pt-0">
     <ProjectSlider :slides="projects"/>
   </div>
 </template>
