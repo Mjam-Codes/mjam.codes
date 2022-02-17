@@ -132,8 +132,8 @@ export default {
     right: 0;
     /* Set the small card size as a default*/
     z-index: 20;
+    /* Important: Use translate3d to increase animation speed by calculating the animation on the GPU */
     transform: translate3d(-30%, 0, 0) scale3d(0.8, 0.8, 1);
-    /* Set transition styles */
     transition: transform 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
   }
 
