@@ -89,10 +89,6 @@ export default {
 </script>
 
 <style scoped>
-.swiper-button-next {
-  bottom: 0 !important;
-}
-
 .swiper-slide-active .image-overlay {
   @apply opacity-20;
 }
