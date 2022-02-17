@@ -13,7 +13,7 @@
         >
           <div class="image-overlay absolute w-full h-full bg-black opacity-20 rounded-lg z-10"></div>
           <img class="absolute w-full h-full object-cover rounded-lg md:border md:border-black" :src="imageSource(slide.imageUrl)" :alt="slide.name">
-          <div class="absolute bottom-12 left-6 right-6 text-white text-2xl z-20">
+          <div class="slider-label absolute bottom-12 left-6 right-6 text-white text-2xl z-20">
             <div class="md:hidden">{{ slide.name }} – </div>{{slide.description}}
           </div>
         </swiper-slide>
@@ -98,6 +98,9 @@ export default {
 }
 
 @media screen(md) {
+  .slider-label {
+    display: none;
+  }
 
   .project::after {
     content: '';
@@ -136,10 +139,24 @@ export default {
     transition: transform 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
   }
 
+  .swiper-slide .image-overlay {
+    background-color: #333;
+    @apply opacity-100;
+  }
+
   /* The active card is always at front */
   .swiper-slide-active {
     z-index: 40;
     transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+  }
+
+  .swiper-slide-active .image-overlay {
+    background-color: #000;
+    @apply opacity-20;
+  }
+
+  .swiper-slide-active .slider-label {
+    display: block;
   }
 
   /* The next card has the middle size */
@@ -148,11 +165,21 @@ export default {
     transform: translate3d(-15%, 0, 0) scale3d(0.9, 0.9, 1);
   }
 
+  .swiper-slide-next .image-overlay {
+    background-color: #000;
+    @apply opacity-100;
+  }
+
   /* If the first swiper-slide child has neither the active, next or prev class */
   /* The animation is at its end and therefore the next and medium sized card is the first one */
   .swiper-slide:not(.swiper-slide-active):not(.swiper-slide-next):not(.swiper-slide-prev):first-child {
     z-index: 30;
     transform: translate3d(-15%, 0, 0) scale3d(0.9, 0.9, 1);
+  }
+
+  .swiper-slide:not(.swiper-slide-active):not(.swiper-slide-next):not(.swiper-slide-prev):first-child .image-overlay {
+     background-color: #000;
+     @apply opacity-100;
   }
 }
 </style>
