@@ -9,11 +9,11 @@
         <swiper-slide
           v-for="slide in slides"
           :key="slide.key"
-          class="relative h-0 pb-2/3"
+          class="swiper-slide"
         >
-          <div class="image-overlay absolute w-full h-full bg-black opacity-20 rounded-lg z-10"></div>
-          <img class="absolute w-full h-full object-cover rounded-lg md:border md:border-black" :src="imageSource(slide.imageUrl)" :alt="slide.name">
-          <div class="slider-label absolute bottom-12 left-6 right-6 text-white text-2xl z-20">
+          <div class="swiper-overlay"></div>
+          <img class="swiper-image" :src="imageSource(slide.imageUrl)" :alt="slide.name">
+          <div class="slider-label">
             <div class="md:hidden">{{ slide.name }} – </div>{{slide.description}}
           </div>
         </swiper-slide>
@@ -89,8 +89,40 @@ export default {
 </script>
 
 <style scoped>
-.swiper-slide-active .image-overlay {
-  @apply opacity-20;
+.swiper-slide {
+  padding-bottom: 146.5%;
+  @apply relative h-0;
+}
+
+@media screen(md) {
+  .swiper-slide {
+    @apply h-full;
+  }
+}
+
+/* A transparent overlay to darken the swiper image */
+.swiper-overlay {
+  @apply absolute w-full h-full bg-black opacity-20 rounded-lg z-10;
+}
+
+@media screen(md) {
+  .swiper-overlay {
+      @apply bg-gray-700 opacity-100;
+  }
+}
+
+.swiper-image {
+  @apply absolute w-full h-full object-cover rounded-lg;
+}
+
+@media screen(md) {
+  .swiper-image {
+      @apply border border-black;
+  }
+}
+
+.slider-label {
+  @apply absolute bottom-12 left-6 right-6 text-white text-2xl z-20;
 }
 
 @media screen(md) {
@@ -125,17 +157,13 @@ export default {
     @apply absolute top-0 right-0 w-9/12 pb-0 z-20;
   }
 
-  .swiper-slide .image-overlay {
-    @apply bg-gray-700 opacity-100;
-  }
-
   /* The active card is always at front */
   .swiper-slide-active {
     transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
     @apply z-40;
   }
 
-  .swiper-slide-active .image-overlay {
+  .swiper-slide-active .swiper-overlay {
     @apply bg-black opacity-20;
   }
 
@@ -152,8 +180,8 @@ export default {
     @apply z-30;
   }
 
-  .swiper-slide-next .image-overlay,
-  .swiper-slide:not(.swiper-slide-active):not(.swiper-slide-next):not(.swiper-slide-prev):first-child .image-overlay {
+  .swiper-slide-next .swiper-overlay,
+  .swiper-slide:not(.swiper-slide-active):not(.swiper-slide-next):not(.swiper-slide-prev):first-child .swiper-overlay {
     @apply bg-black opacity-100;
   }
 }
