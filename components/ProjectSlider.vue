@@ -98,8 +98,12 @@ export default {
 
   .project::after {
     content: '';
-    transition: left 0.2s cubic-bezier(0.215, 0.61, 0.355, 1),width 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
-    @apply absolute bg-black left-0 w-0 bottom-2 z-50 h-px;
+    width: 13.5rem;
+    transition: transform 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+    transform-origin: right;
+    transform-style: preserve-3D;
+    transform: scale(0);
+    @apply absolute bg-black -left-56 bottom-2 z-50 h-px;
   }
 
   .project-active {
@@ -107,8 +111,7 @@ export default {
   }
 
   .project-active::after {
-    width: 13.5rem;
-    @apply -left-56;
+    transform: scale(1);
   }
 
   .swiper-container {
