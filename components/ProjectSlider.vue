@@ -129,34 +129,31 @@ export default {
     padding-bottom: 100%;
     position: absolute;
     top: 0;
+    right: 0;
     /* Set the small card size as a default*/
     z-index: 20;
-    right: 20%;
-    transform: scale3d(0.8, 0.8, 1);
+    transform: translate3d(-30%, 0, 0) scale3d(0.8, 0.8, 1);
     /* Set transition styles */
-    transition: transform 0.2s cubic-bezier(0.215, 0.61, 0.355, 1), right 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+    transition: transform 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
   }
 
   /* The active card is always at front */
   .swiper-slide-active {
     z-index: 40;
-    right: 0;
-    transform: scale3d(1, 1, 1);
+    transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
   }
 
   /* The next card has the middle size */
   .swiper-slide-next {
     z-index: 30;
-    right: 10%;
-    transform: scale3d(0.9, 0.9, 1);
+    transform: translate3d(-15%, 0, 0) scale3d(0.9, 0.9, 1);
   }
 
   /* If the first swiper-slide child has neither the active, next or prev class */
   /* The animation is at its end and therefore the next and medium sized card is the first one */
   .swiper-slide:not(.swiper-slide-active):not(.swiper-slide-next):not(.swiper-slide-prev):first-child {
     z-index: 30;
-    right: 10%;
-    transform: scale3d(0.9, 0.9, 1);
+    transform: translate3d(-15%, 0, 0) scale3d(0.9, 0.9, 1);
   }
 }
 </style>
