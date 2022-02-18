@@ -130,7 +130,7 @@ export default {
     @apply h-full absolute top-0 right-0 w-9/12 pb-0 z-20;
   }
 
-  /* The active card is always at front and its text is visible */
+  /* The active card is always at front, has the maximum scale and its text is visible */
   .swiper-slide-active {
     transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
     @apply z-40;
@@ -141,8 +141,8 @@ export default {
   }
 
   /* The next card has the middle size */
-  /* If the first swiper-slide child has neither the active, next or prev class */
-  /* The animation is at its end and therefore the next and medium sized card is the first one */
+  /* When the first slide has neither the active, nor the next, nor the prev class, the slider animation is at is end */
+  /* This means that the first slide is going to be the next visible card and it has to be styled accordingly */
   .swiper-slide-next,
   .swiper-slide:not(.swiper-slide-active):not(.swiper-slide-next):not(.swiper-slide-prev):first-child {
     transform: translate3d(-15%, 0, 0) scale3d(0.9, 0.9, 1);
