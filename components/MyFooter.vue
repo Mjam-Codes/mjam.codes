@@ -1,6 +1,12 @@
 <template>
-  <div class="text-center font-medium pb-5 leading-tight text-custom-secondary-500">
-    <NuxtLink v-if="$route.name === 'imprint'" class="hover:text-custom-secondary-700" to="/">
+  <div
+    class="text-center font-medium pb-5 leading-tight text-custom-secondary-500"
+  >
+    <NuxtLink
+      v-if="$route.name === 'imprint'"
+      class="hover:text-custom-secondary-700"
+      to="/"
+    >
       Return to <br class="mobile-break" />homepage
     </NuxtLink>
     <NuxtLink v-else class="hover:text-custom-secondary-700" to="/imprint">
@@ -11,14 +17,14 @@
 
 <script>
 export default {
-  name: 'MyFooter'
+  name: 'MyFooter',
 }
 </script>
 
 <style scoped>
 @media screen(md) {
   .mobile-break {
-    display: none
+    display: none;
   }
 }
 </style>

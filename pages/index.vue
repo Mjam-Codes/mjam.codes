@@ -2,7 +2,7 @@
   <div>
     <MyHero></MyHero>
     <MyShowcase></MyShowcase>
-    <hr class="border-gray-900 mt-5">
+    <hr class="border-gray-900 mt-5" />
     <SkillSet></SkillSet>
   </div>
 </template>

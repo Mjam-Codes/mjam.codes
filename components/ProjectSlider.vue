@@ -1,20 +1,21 @@
 <template>
   <div class="md:flex md:mx-auto md:max-w-5xl">
     <ClientOnly class="custom-box-shadow md:flex md:items-center">
-      <swiper
-        ref="swiper"
-        class="w-3/4"
-        :options="swiperOption"
-      >
+      <swiper ref="swiper" class="w-3/4" :options="swiperOption">
         <swiper-slide
           v-for="slide in slides"
           :key="slide.key"
           class="swiper-slide"
         >
           <div class="swiper-overlay"></div>
-          <img class="swiper-image" :src="imageSource(slide.imageUrl)" :alt="slide.name">
+          <img
+            class="swiper-image"
+            :src="imageSource(slide.imageUrl)"
+            :alt="slide.name"
+          />
           <div class="slider-label">
-            <div class="md:hidden">{{ slide.name }} – </div>{{slide.description}}
+            <div class="md:hidden">{{ slide.name }} –</div>
+            {{ slide.description }}
           </div>
         </swiper-slide>
       </swiper>
@@ -30,9 +31,18 @@
           <li
             v-for="(slide, index) in slides"
             :key="'pagination_' + slide.key"
-            :class="{ 'mb-7': true, 'project': true, 'project-active': index ===  activeSlideIndex }"
+            :class="{
+              'mb-7': true,
+              project: true,
+              'project-active': index === activeSlideIndex,
+            }"
           >
-            <button class="font-semibold text-2xl" @mouseover="goToSlide(slide)">{{ slide.name }}</button>
+            <button
+              class="font-semibold text-2xl"
+              @mouseover="goToSlide(slide)"
+            >
+              {{ slide.name }}
+            </button>
           </li>
         </ul>
       </div>
@@ -48,28 +58,29 @@ export default {
       type: Array,
       default() {
         return []
-      }
-    }
+      },
+    },
   },
-  data () {
+  data() {
     return {
       swiperOption: {
         slidesPerView: 'auto',
         spaceBetween: 40,
         loop: false,
         breakpoints: {
-          768: { // when window width is >= 768px handle translations with css
+          768: {
+            // when window width is >= 768px handle translations with css
             speed: 0,
             spaceBetween: 0,
-            virtualTranslate: true
-          }
-        }
+            virtualTranslate: true,
+          },
+        },
       },
       activeSlideIndex: 0,
     }
   },
   methods: {
-    nextSlide () {
+    nextSlide() {
       this.$refs.swiper.$swiper.slideNext()
     },
     goToSlide(slide) {
@@ -81,10 +92,10 @@ export default {
     },
     // Workaround to serve dynamic images from the assets folder
     // https://blog.lichter.io/posts/dynamic-images-vue-nuxt/
-    imageSource (fileName) {
+    imageSource(fileName) {
       return require(`../assets/${fileName}`)
-    }
-  }
+    },
+  },
 }
 </script>
 
@@ -109,7 +120,7 @@ export default {
 
 @media screen(md) {
   .swiper-image {
-      @apply border border-black;
+    @apply border border-black;
   }
 
   .slider-label {
