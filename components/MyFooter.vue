@@ -7,10 +7,10 @@
       class="hover:text-custom-secondary-700"
       to="/"
     >
-      Return to <br class="mobile-break" />homepage
+      Return to <br class="md:hidden" />homepage
     </NuxtLink>
     <NuxtLink v-else class="hover:text-custom-secondary-700" to="/imprint">
-      Legal notice & <br class="mobile-break" />data privacy
+      Legal notice & <br class="md:hidden" />data privacy
     </NuxtLink>
   </div>
 </template>
@@ -20,11 +20,3 @@ export default {
   name: 'MyFooter',
 }
 </script>
-
-<style scoped>
-@media screen(md) {
-  .mobile-break {
-    display: none;
-  }
-}
-</style>
