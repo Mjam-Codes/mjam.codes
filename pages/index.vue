@@ -1,5 +1,6 @@
 <template>
   <div>
+    <!-- test deployment -->
     <MyHero></MyHero>
     <MyShowcase></MyShowcase>
     <hr class="border-gray-900 mt-5">
