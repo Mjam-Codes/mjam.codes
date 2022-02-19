@@ -28,7 +28,7 @@ jobs:
           check-latest: true
 
       - name: 📦 Install dependencies
-        run: yarn
+        run: yarn install
 
       - name: Run Nuxt Generate
         run: yarn generate
