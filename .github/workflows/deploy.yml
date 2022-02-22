@@ -1,0 +1,40 @@
+name: 🚀 Deploy website
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  web-deploy:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        node: [14]
+
+    steps:
+      - name: 🛎 Checkout
+        uses: actions/checkout@master
+
+      - name: 🏗 Setup node env
+        uses: actions/setup-node@v2.1.5
+        with:
+          node-version: ${{ matrix.node }}
+          check-latest: true
+
+      - name: 📦 Install dependencies
+        run: yarn install
+
+      - name: Run Nuxt Generate
+        run: yarn generate
+
+      - name: 🎉 Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
