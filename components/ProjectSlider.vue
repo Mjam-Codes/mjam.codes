@@ -67,6 +67,8 @@ export default {
         slidesPerView: 'auto',
         spaceBetween: 40,
         loop: false,
+        // Do not hide backface slides
+        maxBackfaceHiddenSlides: 0,
         breakpoints: {
           768: {
             // when window width is >= 768px handle translations with css

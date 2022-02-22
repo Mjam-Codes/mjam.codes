@@ -4799,7 +4799,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dom7@npm:^4.0.2":
+"dom7@npm:^4.0.4":
   version: 4.0.4
   resolution: "dom7@npm:4.0.4"
   dependencies:
@@ -8424,7 +8424,7 @@ __metadata:
     postcss: ^8.4.4
     prettier: ^2.5.1
     sass-loader: ^12.4.0
-    swiper: ^7.4.1
+    swiper: ^8.0.6
     vue: ^2.6.14
     vue-awesome-swiper: ^4.1.1
     vue-server-renderer: ^2.6.14
@@ -12183,13 +12183,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"swiper@npm:^7.4.1":
-  version: 7.4.1
-  resolution: "swiper@npm:7.4.1"
+"swiper@npm:^8.0.6":
+  version: 8.0.6
+  resolution: "swiper@npm:8.0.6"
   dependencies:
-    dom7: ^4.0.2
+    dom7: ^4.0.4
     ssr-window: ^4.0.2
-  checksum: 996339afa86a0200564d2418b9f5a5f222cb91a5fec7a1ee3123e47a8978b7458fedeb87c7dfeb86ad0559c2bef3e20779a87d71987e9d36b5651fa9dada9a2c
+  checksum: 19e371f7847a58a543dc268dadec52b07307461b013c36f468c7677cdea369d6d0076553714f3b4516d57fb3278a4315b850320f1b6a8f1900f8229b9c1cd6a2
   languageName: node
   linkType: hard
 
