@@ -15,14 +15,37 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Mjam builds lightweight web infrastructures for your designs. We like to work with nice people, headless CMS and the Jamstack.' },
+      {
+        hid: 'description',
+        name: 'description',
+        content:
+          'Mjam builds lightweight web infrastructures for your designs. We like to work with nice people, headless CMS and the Jamstack.',
+      },
       { name: 'format-detection', content: 'telephone=no' },
-      { name: 'keywords', content: 'Web development, digital products, Front-end web development, agency, Headless CMS, Jamstack, Berlin, Köln' }
+      {
+        name: 'keywords',
+        content:
+          'Web development, digital products, Front-end web development, agency, Headless CMS, Jamstack, Berlin, Köln',
+      },
     ],
     link: [
-      { rel: 'apple-touch-icon', sizes: '180x180', href: '/favicon/apple-touch-icon.png' },
-      { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon/favicon-32x32.png' },
-      { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon/favicon-16x16.png' },
+      {
+        rel: 'apple-touch-icon',
+        sizes: '180x180',
+        href: '/favicon/apple-touch-icon.png',
+      },
+      {
+        rel: 'icon',
+        type: 'image/png',
+        sizes: '32x32',
+        href: '/favicon/favicon-32x32.png',
+      },
+      {
+        rel: 'icon',
+        type: 'image/png',
+        sizes: '16x16',
+        href: '/favicon/favicon-16x16.png',
+      },
       { rel: 'manifest', href: '/favicon/site.webmanifest' },
     ],
   },
@@ -31,9 +54,7 @@ export default {
   css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [
-    { src: '~/plugins/vue-awesome-swiper', mode: 'client' }
-  ],
+  plugins: [{ src: '~/plugins/vue-awesome-swiper', mode: 'client' }],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,

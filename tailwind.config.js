@@ -10,7 +10,7 @@ module.exports = {
       },
     },
     fontFamily: {
-      'sans': ['Roboto', 'ui-sans-serif', 'system-ui']
-    }
-  }
+      sans: ['Roboto', 'ui-sans-serif', 'system-ui'],
+    },
+  },
 }
