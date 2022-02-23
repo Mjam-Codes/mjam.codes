@@ -1,7 +1,11 @@
 <template>
   <div class="md:flex md:mx-auto md:max-w-5xl">
     <ClientOnly class="custom-box-shadow md:flex md:items-center">
-      <swiper ref="swiper" class="w-3/4" :options="swiperOption">
+      <swiper
+        ref="swiper"
+        class="w-3/4 max-w-xs pl-2.5 md:pl-0 md:max-w-none"
+        :options="swiperOption"
+      >
         <swiper-slide
           v-for="slide in slides"
           :key="slide.key"

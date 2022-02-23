@@ -1,6 +1,6 @@
 <template>
   <div class="container nav mx-auto py-5 px-7">
-    <ul class="flex justify-end gap-4 md:gap-8 font-medium">
+    <ul class="flex justify-end gap-4 font-semibold md:gap-8 md:font-medium">
       <li>
         <a
           class="cursor-pointer hover:text-custom-secondary-500"
