@@ -1,8 +1,7 @@
 <template>
   <div
-    class="imprint container mx-auto px-6 py-10 text-center font-bold text-lg leading-tight md:mb-32"
+    class="imprint container mx-auto px-6 pt-5 pb-10 text-center font-bold text-lg leading-tight md:mb-20"
   >
-    <p class="mb-5">Contact</p>
     <p class="mb-5">
       Moritz Pflüger<br />
       Wichheimerstraße 36<br />
