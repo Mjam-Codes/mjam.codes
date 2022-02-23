@@ -11,7 +11,6 @@
           :key="slide.key"
           class="swiper-slide"
         >
-          <div class="swiper-overlay"></div>
           <img
             class="swiper-image"
             :src="imageSource(slide.imageUrl)"
@@ -112,7 +111,8 @@ export default {
 }
 
 /* A transparent overlay to darken the swiper image */
-.swiper-overlay {
+.swiper-slide::after {
+  content: '';
   @apply absolute w-full h-full bg-black opacity-20 rounded-lg z-10;
 }
 
