@@ -27,4 +27,4 @@ $ yarn generate
 For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).
 
 ## Continous Deployment
-Pushes to the `master` branch of this repository will automatically be deployed with Github Pages.
+Pushes to the `master` branch of this repository will automatically be deployed to Github Pages.
