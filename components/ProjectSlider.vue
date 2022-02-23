@@ -111,9 +111,28 @@ export default {
 }
 
 /* A transparent overlay to darken the swiper image */
+.swiper-slide::before {
+  content: '';
+  @apply absolute w-full h-full bg-black opacity-10 z-10 rounded-lg;
+}
+
+/* A gradient overlay to darken the swiper image even further */
 .swiper-slide::after {
   content: '';
-  @apply absolute w-full h-full bg-black opacity-20 rounded-lg z-10;
+  background-image: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.3) 0%,
+    rgba(0, 0, 0, 0) 50%
+  );
+  @apply absolute w-full h-full z-10 rounded-lg;
+}
+
+.swiper-slide:nth-child(2)::before {
+  @apply opacity-30;
+}
+
+.swiper-slide:nth-child(3)::before {
+  @apply opacity-40;
 }
 
 .swiper-image {
@@ -121,7 +140,7 @@ export default {
 }
 
 .slider-label {
-  @apply absolute bottom-12 left-6 right-6 text-white text-2xl z-20;
+  @apply absolute text-white z-20 left-6 right-6 text-xl bottom-8 md:text-2xl md:bottom-12;
 }
 
 @media screen(md) {
