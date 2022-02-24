@@ -3,7 +3,7 @@
     <ClientOnly class="custom-box-shadow md:flex md:items-center">
       <swiper
         ref="swiper"
-        class="w-3/4 max-w-xs pl-2.5 md:pl-0 md:max-w-none"
+        class="w-3/4 max-w-xs pl-2.5 md:pl-0 md:max-w-none md:h-128 md:w-1/2 md:mr-16"
         :options="swiperOption"
       >
         <swiper-slide
@@ -105,87 +105,98 @@ export default {
 </script>
 
 <style scoped>
+/* Base styles for the project slider */
 .swiper-slide {
   padding-bottom: 146.5%;
   @apply relative h-0;
 }
 
-/* A transparent overlay to darken the swiper image */
-.swiper-slide::before {
-  content: '';
-  @apply absolute w-full h-full bg-black opacity-10 z-10 rounded-lg;
-}
-
-/* A gradient overlay to darken the swiper image even further */
+/* Two transparent overlays to darken the swiper image */
+.swiper-slide::before,
 .swiper-slide::after {
   content: '';
+  @apply absolute w-full h-full z-10 rounded-lg;
+}
+/* The before-overlay sets a soft gray overlay */
+.swiper-slide::before {
+  @apply bg-black opacity-10;
+}
+
+/* The after-overlay adds a gradient to increase text readibility */
+.swiper-slide::after {
   background-image: linear-gradient(
     to top,
     rgba(0, 0, 0, 0.3) 0%,
     rgba(0, 0, 0, 0) 50%
   );
-  @apply absolute w-full h-full z-10 rounded-lg;
-}
-
-.swiper-slide:nth-child(2)::before {
-  @apply opacity-30;
-}
-
-.swiper-slide:nth-child(3)::before {
-  @apply opacity-40;
 }
 
 .swiper-image {
   @apply absolute w-full h-full object-cover rounded-lg;
+
+  @media screen(md) {
+    @apply border border-black;
+  }
 }
 
 .slider-label {
   @apply absolute text-white z-20 left-6 right-6 text-xl bottom-8 md:text-2xl md:bottom-12;
-}
 
-@media screen(md) {
-  .swiper-image {
-    @apply border border-black;
-  }
-
-  .slider-label {
+  @media screen(md) {
     @apply hidden;
   }
+}
 
-  .swiper-container {
-    height: 481px;
-    @apply flex w-1/2 mr-16;
+/* Styles that are concerned with the differen states of the slide */
+/* Swiper slide has four potential states: active, next, prev or none of those*/
+/* Set the standard for the swiper-slide: dark and small */
+.swiper-slide {
+  &::before {
+    @apply opacity-40;
   }
 
-  /* Swiper slide has four potential states: active, next, prev or none of those*/
-  .swiper-slide {
+  @media screen(md) {
     /* Important: Use translate3d to increase animation speed by calculating the animation on the GPU */
-    /* The standard slide is the smallest one */
     transform: translate3d(-30%, 0, 0) scale3d(0.8, 0.8, 1);
     transition: transform 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
     @apply h-full absolute top-0 right-0 w-9/12 pb-0 z-20;
   }
+}
 
-  /* The active card is always at front, has the maximum scale and its text is visible */
-  .swiper-slide-active {
+/* The active card is always at front, has the maximum scale and its text is visible */
+.swiper-slide-active {
+  &::before {
+    @apply opacity-10;
+  }
+
+  @media screen(md) {
     transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
     @apply z-40;
+
+    /* Show the description for the active card */
+    .slider-label {
+      @apply block;
+    }
+  }
+}
+
+/* The next card has the middle size */
+/* When the first slide has neither the active, nor the next, nor the prev class, the slider animation is at is end */
+/* This means that the first slide is going to be the next visible card and it has to be styled accordingly */
+.swiper-slide-next,
+.swiper-slide:not(.swiper-slide-active):not(.swiper-slide-next):not(.swiper-slide-prev):first-child {
+  &::before {
+    @apply opacity-30;
   }
 
-  .swiper-slide-active .slider-label {
-    @apply block;
-  }
-
-  /* The next card has the middle size */
-  /* When the first slide has neither the active, nor the next, nor the prev class, the slider animation is at is end */
-  /* This means that the first slide is going to be the next visible card and it has to be styled accordingly */
-  .swiper-slide-next,
-  .swiper-slide:not(.swiper-slide-active):not(.swiper-slide-next):not(.swiper-slide-prev):first-child {
+  @media screen(md) {
     transform: translate3d(-15%, 0, 0) scale3d(0.9, 0.9, 1);
     @apply z-30;
   }
+}
 
-  /* Line that points to card when project is selected */
+/* Style the desktop navigation menu and its hover styles */
+@media screen(md) {
   .project::after {
     content: '';
     width: 11.5rem;
