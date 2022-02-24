@@ -147,56 +147,52 @@ export default {
   }
 }
 
-/* Styles that are concerned with the differen states of the slide */
-/* Swiper slide has four potential states: active, next, prev or none of those*/
-/* Set the standard for the swiper-slide: dark and small */
-.swiper-slide {
-  &::before {
-    @apply opacity-40;
-  }
-
-  @media screen(md) {
-    /* Important: Use translate3d to increase animation speed by calculating the animation on the GPU */
+/* Styles that are concerned with the desktop project slider */
+/* Cards are stacked on top of each other */
+/* There are four potential states for a card: active, next, prev or none of those*/
+@media screen(md) {
+  /* Standard state: small and from the darkest gray */
+  .swiper-slide {
+    /* Use translate3d to increase animation speed by calculating the animation on the GPU */
     transform: translate3d(-30%, 0, 0) scale3d(0.8, 0.8, 1);
     transition: transform 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
     @apply h-full absolute top-0 right-0 w-9/12 pb-0 z-20;
-  }
-}
 
-/* The active card is always at front, has the maximum scale and its text is visible */
-.swiper-slide-active {
-  &::before {
-    @apply opacity-10;
+    &::before {
+      transition: opacity 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+      @apply opacity-40;
+    }
   }
 
-  @media screen(md) {
+  /* Active state: card is at front, has the maximum scale and its text is visible */
+  .swiper-slide-active {
     transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
     @apply z-40;
 
-    /* Show the description for the active card */
+    &::before {
+      @apply opacity-10;
+    }
+
+    /* Show the description text */
     .slider-label {
       @apply block;
     }
   }
-}
 
-/* The next card has the middle size */
-/* When the first slide has neither the active, nor the next, nor the prev class, the slider animation is at is end */
-/* This means that the first slide is going to be the next visible card and it has to be styled accordingly */
-.swiper-slide-next,
-.swiper-slide:not(.swiper-slide-active):not(.swiper-slide-next):not(.swiper-slide-prev):first-child {
-  &::before {
-    @apply opacity-30;
-  }
-
-  @media screen(md) {
+  /* Next state: Card has the middle size and a medium gray */
+  .swiper-slide-next,
+  /* When the first slide has neither the active, nor the next, nor the prev class, the slider animation is at is end */
+  /* This means that the first slide is going to be the next visible card and it has to be styled accordingly */
+  .swiper-slide:not(.swiper-slide-active):not(.swiper-slide-next):not(.swiper-slide-prev):first-child {
     transform: translate3d(-15%, 0, 0) scale3d(0.9, 0.9, 1);
     @apply z-30;
-  }
-}
 
-/* Style the desktop navigation menu and its hover styles */
-@media screen(md) {
+    &::before {
+      @apply opacity-30;
+    }
+  }
+
+  /* Style the desktop navigation menu and its hover styles */
   .project::after {
     content: '';
     width: 11.5rem;
