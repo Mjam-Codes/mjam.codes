@@ -65,23 +65,19 @@ export default {
 }
 
 .dot-title {
-  display: none;
+  @apply hidden;
 
   @media screen(md) {
-    display: inline-block;
-    position: absolute;
     top: 8%;
     left: 20%;
+    @apply inline-block absolute;
 
     &::after {
-      position: absolute;
-      top: 2rem;
-      left: 50%;
-      display: block;
       content: '';
       height: 36px;
       width: 25px;
       background-image: url("../assets/arrow.svg");
+      @apply block absolute top-8 left-1/2;
     }
   }
 }
