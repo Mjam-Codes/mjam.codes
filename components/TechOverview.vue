@@ -70,13 +70,12 @@ export default {
   @media screen(md) {
     display: inline-block;
     position: absolute;
-    top: 6.3%;
-    left: 14%;
-    @apply text-lg font-semibold;
+    top: 8%;
+    left: 20%;
 
     &::after {
       position: absolute;
-      top: 2.5rem;
+      top: 2rem;
       left: 50%;
       display: block;
       content: '';
@@ -98,7 +97,7 @@ export default {
 }
 
 .dot-text {
-  @apply inline-block text-xs leading-none font-semibold px-2;
+  @apply inline-block text-xs leading-none font-medium px-2;
 }
 
 /* Vary the sizes of the circles */
@@ -115,7 +114,7 @@ export default {
     width: 25.9%;
 
     @media screen(md) {
-      width: 10.8%;
+      width: 9%;
     }
   }
 
@@ -131,7 +130,7 @@ export default {
     width: 15.6%;
 
     @media screen(md) {
-      width: 6%;
+      width: 5%;
     }
   }
 
@@ -139,7 +138,7 @@ export default {
     width: 13.6%;
 
     @media screen(md) {
-      width: 5.3%;
+      width: 4%;
     }
   }
 
@@ -147,7 +146,7 @@ export default {
     width: 10.7%;
 
     @media screen(md) {
-      width: 4.2%;
+      width: 3.6%;
     }
   }
 }
@@ -169,7 +168,7 @@ export default {
 
   @media screen(md) {
     top: 72.6%;
-    left: 48%;
+    left: 47.2%;
   }
 }
 
@@ -210,7 +209,7 @@ export default {
 
   @media screen(md) {
     top: 29.8%;
-    left: 22.6%;
+    left: 25%;
   }
 }
 
@@ -250,8 +249,7 @@ export default {
   @apply justify-start;
 
   @media screen(md) {
-    top: 58.6%;
-    left: 57.3%;
+    display: none;
   }
 }
 
