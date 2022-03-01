@@ -29,7 +29,7 @@
         <div class="dot dot--nuxt dot--m">
             <span class="dot-text">NuxtJS</span>
         </div>
-        <div class="dot dot--next dot--xss">
+        <div class="dot dot--next dot--xxs">
             <span class="dot-text">Nextjs</span>
         </div>
         <div class="dot dot--react dot--xs">
@@ -72,7 +72,7 @@ export default {
     position: absolute;
     top: 6.3%;
     left: 14%;
-    @apply font-mono text-lg;
+    @apply text-lg font-semibold;
 
     &::after {
       position: absolute;
@@ -98,7 +98,7 @@ export default {
 }
 
 .dot-text {
-  @apply inline-block text-xs leading-none font-mono;
+  @apply inline-block text-xs leading-none font-semibold px-2;
 }
 
 /* Vary the sizes of the circles */
@@ -124,6 +124,14 @@ export default {
 
     @media screen(md) {
       width: 6.4%;
+    }
+  }
+
+  &--s {
+    width: 15.6%;
+
+    @media screen(md) {
+      width: 6%;
     }
   }
 
@@ -157,7 +165,7 @@ export default {
 
 .dot--strapi {
   top: 21.7%;
-  left: 30.3%;
+  left: 28.3%;
 
   @media screen(md) {
     top: 72.6%;
@@ -177,7 +185,8 @@ export default {
 
 .dot--psql {
   top: 33.5%;
-  left: 40.8%;
+  left: 43%;
+  @apply justify-start;
 
   @media screen(md) {
     top: 64.3%;
@@ -238,6 +247,7 @@ export default {
 .dot--next {
   top: 74.7%;
   left: 58.4%;
+  @apply justify-start;
 
   @media screen(md) {
     top: 58.6%;
@@ -247,7 +257,7 @@ export default {
 
 .dot--react {
   top: 65.1%;
-  left: 66.7%;
+  left: 64.7%;
 
   @media screen(md) {
     top: 47.5%;
