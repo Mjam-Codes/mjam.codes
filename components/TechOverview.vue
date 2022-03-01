@@ -72,10 +72,11 @@ export default {
     position: absolute;
     top: 6.3%;
     left: 14%;
+    @apply font-mono text-lg;
 
     &::after {
       position: absolute;
-      top: 2rem;
+      top: 2.5rem;
       left: 50%;
       display: block;
       content: '';
@@ -97,11 +98,7 @@ export default {
 }
 
 .dot-text {
-  @apply inline-block text-sm font-mono leading-none;
-
-  @media screen(md) {
-    @apply text-base;
-  }
+  @apply inline-block text-xs leading-none font-mono;
 }
 
 /* Vary the sizes of the circles */

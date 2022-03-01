@@ -1,4 +1,5 @@
 const colors = require('tailwindcss/colors')
+const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
   theme: {
@@ -14,8 +15,8 @@ module.exports = {
       gray: colors.trueGray,
     },
     fontFamily: {
-      sans: ['Roboto', 'ui-sans-serif', 'system-ui'],
-      mono: ['ui-monospace', 'system-ui'],
+      sans: [...defaultTheme.fontFamily.sans],
+      mono: [...defaultTheme.fontFamily.mono],
     },
   },
 }
