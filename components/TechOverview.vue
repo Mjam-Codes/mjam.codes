@@ -1,6 +1,9 @@
 <template>
   <div class="bg-coffee mb-5 md:mb-20">
     <div class="dot-container">
+        <div class="dot-title">
+          what we offer
+        </div>
         <div class="dot dot--cms dot--l">
             <span class="dot-text">Content</br>Management</br>Systems</span>
         </div>
@@ -55,6 +58,32 @@ export default {
       max-width: 60rem;
       height: 33.1875rem;
     }
+
+    @media screen(xl) {
+      max-width: 80rem;
+    }
+}
+
+.dot-title {
+  display: none;
+
+  @media screen(md) {
+    display: inline-block;
+    position: absolute;
+    top: 6.3%;
+    left: 14%;
+
+    &::after {
+      position: absolute;
+      top: 2rem;
+      left: 50%;
+      display: block;
+      content: '';
+      height: 36px;
+      width: 25px;
+      background-image: url("../assets/arrow.svg");
+    }
+  }
 }
 
 .dot {
@@ -69,6 +98,10 @@ export default {
 
 .dot-text {
   @apply inline-block text-sm font-mono leading-none;
+
+  @media screen(md) {
+    @apply text-base;
+  }
 }
 
 /* Vary the sizes of the circles */
@@ -131,7 +164,7 @@ export default {
 
   @media screen(md) {
     top: 72.6%;
-    left: 47.8%;
+    left: 48%;
   }
 }
 
