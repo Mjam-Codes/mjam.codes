@@ -11,7 +11,7 @@
       </li>
       <li>
         <a
-          class="cursor-pointer underline underline-offset-8 hover:text-custom-secondary-500"
+          class="cursor-pointer underline hover:text-custom-secondary-500"
           href="mailto:mail@mjam.codes"
           >mail@mjam.codes</a
         >
