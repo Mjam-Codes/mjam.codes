@@ -8,6 +8,10 @@ module.exports = {
           700: '#5c1006B3',
         },
       },
+      // Height for a single desktop slide
+      height: {
+        128: '30rem',
+      },
     },
     fontFamily: {
       sans: ['Roboto', 'ui-sans-serif', 'system-ui'],

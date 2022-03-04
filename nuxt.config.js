@@ -2,7 +2,7 @@ export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
   router: {
-    base: '/'
+    base: '/',
   },
 
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -71,5 +71,16 @@ export default {
   modules: [],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
+  build: {
+    // Configure postcss to make the nesting of stylerules possible
+    // https://tailwindcss.com/docs/using-with-preprocessors#nesting
+    postcss: {
+      plugins: {
+        'postcss-import': {},
+        'tailwindcss/nesting': {},
+        tailwindcss: {},
+        autoprefixer: {},
+      },
+    },
+  },
 }
