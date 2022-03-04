@@ -28,10 +28,10 @@ jobs:
           check-latest: true
 
       - name: 📦 Install dependencies
-        run: yarn install
+        run: npm install
 
       - name: Run Nuxt Generate
-        run: yarn generate
+        run: npm run generate
 
       - name: 🎉 Deploy
         uses: peaceiris/actions-gh-pages@v3
