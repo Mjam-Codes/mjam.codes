@@ -1,20 +1,27 @@
+const colors = require('tailwindcss/colors')
+const defaultTheme = require('tailwindcss/defaultTheme')
+
 module.exports = {
   theme: {
-    extend: {
-      colors: {
-        'custom-primary': '#BF5AD9',
-        'custom-secondary': {
-          500: '#ae8883',
-          700: '#5c1006B3',
-        },
+    colors: {
+      coffee: '#e3bb341A',
+      'custom-primary': '#BF5AD9',
+      'custom-secondary': {
+        500: '#ae8883',
+        700: '#5c1006B3',
       },
-      // Height for a single desktop slide
-      height: {
-        128: '30rem',
-      },
+      black: colors.black,
+      white: colors.white,
+      gray: colors.trueGray,
     },
     fontFamily: {
-      sans: ['Roboto', 'ui-sans-serif', 'system-ui'],
+      sans: [...defaultTheme.fontFamily.sans],
+      mono: [...defaultTheme.fontFamily.mono],
+    },
+    extend: {
+      spacing: {
+        128: '30rem',
+      },
     },
   },
 }
