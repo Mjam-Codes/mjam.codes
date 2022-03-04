@@ -5,12 +5,24 @@
     <p class="mb-5">
       Moritz Pflüger<br />
       Wichheimerstraße 36<br />
-      50678 Köln
+      50678 Köln<br />
+      <a
+        class="underline hover:text-custom-secondary-500"
+        href="https://www.linkedin.com/in/moritz-pfl%C3%BCger-5b8b6a1b7/"
+        target="_blank"
+        >LinkedIn</a
+      >
     </p>
     <p class="mb-5">
       Milan Bargiel<br />
       Hauptstraße 36<br />
-      10827 Berlin
+      10827 Berlin<br />
+      <a
+        class="underline hover:text-custom-secondary-500"
+        href="https://www.linkedin.com/in/milan-bargiel-9946b0226/"
+        target="_blank"
+        >LinkedIn</a
+      >
     </p>
     <p class="mb-5">
       <a
